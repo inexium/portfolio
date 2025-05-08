@@ -1,0 +1,6 @@
+db.sqlite3
+.env
+__pycache__/
+tailwindcss
+tailwindcss-linux
+.DS_Store

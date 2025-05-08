@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-main-dark-black {
+    background-color: #222831;
+}
+
+.bg-main-black {
+    background-color: #393E46;
+}
+
+.bg-main-green {
+    background-color: #B3DEC1;
+}
+
+#contact {
+    scroll-margin-top: 75px;
+}
+
+@font-face {
+    font-family: crotah;
+    src: url("/static/font/crotah.ttf") format("truetype");
+}
+
+.font-crotah {
+    font-family: crotah, sans-serif;
+}

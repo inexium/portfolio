@@ -1,0 +1,17 @@
+when:
+  - event: push
+    branch: master
+
+steps:
+  - name: build-docker-image
+    image: woodpeckerci/plugin-docker-buildx
+    settings:
+      tags:
+        - ${CI_COMMIT_SHA:0:8}
+        - latest
+      repo: git.sebastien-meiss.dev/inexium/portfolio
+      registry: git.sebastien-meiss.dev
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password

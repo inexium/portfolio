@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main_section %}
+    <div class="bg-main-dark-black flex flex-col justify-start items-center">
+        <div class="w-[95%] max-w-[984px]">
+            <div class="h-[70px]"></div>
+            <img src="{% static "img/photo_profil.jpg" %}"
+                 alt="profile picture"
+                 width=""
+                 height=""
+                 class="rounded-full scale-75 max-w-[300px] mx-auto" />
+            <p class="font-crotah text-white text-5xl text-center mr-16">Sebastien</p>
+            <p class="font-crotah text-white text-5xl text-center ml-48">Meiss</p>
+            <p class="font-crotah text-white text-center text-2xl">
+                <br>
+                Developpeur Fullstack
+            </p>
+            <div class="visible w-full flex justify-center mt-16">
+                <div class="bg-white p-1 w-10 h-10 shadow-lg rounded-full flex items-center justify-center">
+                    <img src="{% static "img/arrow-down.svg" %}" alt="" width="" height="" />
+                </div>
+            </div>
+            <div class="h-[64px]"></div>
+        </div>
+    </div>
+    <div class="bg-white flex items-center flex-col">
+        <div class="w-[85%] max-w-[984px]">
+            <p class="text-center mt-12 mb-6">Présentation</p>
+            <p class="text-sm/6 mb-12">
+                Développeur logiciel avec un an d'expérience spécialisé en Django, j'ai acquis une bonne maîtrise des technologies web ainsi que des processus de déploiement et de mise en production. Je suis à la recherche de nouvelles opportunités en tant que développeur web ou logiciel, disponible à partir de début octobre 2024, partout en France.
+            </p>
+        </div>
+    </div>
+    <div class="bg-main-green flex items-center flex-col">
+        <div class="w-[95%] max-w-[984px]">
+            <p class="text-center mt-12">Expériences professionnelles</p>
+            <div class="mt-12 mx-auto w-[95%] bg-white rounded-lg p-4 shadow-2xl mb-12">
+                <p class="text-center">Ingénieur d'étude en développement logiciel</p>
+                <div class="w-full flex justify-center items-center mt-4 mb-4">
+                    <img src="{% static "img/logo-cnrs.svg" %}"
+                         alt="logo du cnrs"
+                         width="50"
+                         height="50" />
+                </div>
+                <p class="text-center text-[#393E46]">Octobre 2024 - Actuellement</p>
+                <p class="text-center text-[#393E46]">Strasbourg</p>
+                <div class="w-full border-t border-[#393E46] border-dashed mt-4 mb-4"></div>
+                <ul class="list-disc ml-4">
+                    <li>Développement d'une plateforme d'hébergement de données scientifiques</li>
+                    <li>Utilisation des technologies Django, Tailwind, S3, Docker, Woodpecker CI</li>
+                    <li>Mise en place des metadata des données scientifiques</li>
+                    <li>Référencement SEO</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white flex items-center flex-col">
+        <div class="w-[95%] max-w-[984px]">
+            <p class="text-center mt-12">Compétences Informatiques</p>
+            <p class="text-xs text-center mt-16 mb-3 underline underline-offset-4">Programmation</p>
+            <div class="sm:flex sm:flex-wrap">
+                {% for item_name, item_code in programing_items.items %}
+                    <div class="flex justify-center items-center mt-4 w-full sm:w-[150px] sm:mx-7">
+                        <div class="flex justify-end w-[50%]">
+                            <div class="h-[50px] w-[50px] bg-gray-200 rounded-lg flex justify-center items-center mr-2">
+                                <i class="devicon-{{ item_code }}-plain text-4xl"></i>
+                            </div>
+                        </div>
+                        <div class="w-[50%]">
+                            <p class="ml-2 sm:whitespace-nowrap">{{ item_name }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <p class="text-xs text-center mt-16 mb-3 underline underline-offset-4">Outils</p>
+            <div class="sm:flex sm:flex-wrap mb-12">
+                {% for item_name, item_code in tool_items.items %}
+                    <div class="flex justify-center items-center mt-4 w-full sm:w-[150px] sm:mx-7">
+                        <div class="flex justify-end w-[50%]">
+                            <div class="h-[50px] w-[50px] bg-gray-200 rounded-lg flex justify-center items-center mr-2">
+                                <i class="devicon-{{ item_code }}-plain text-4xl"></i>
+                            </div>
+                        </div>
+                        <div class="w-[50%]">
+                            <p class="ml-2 sm:whitespace-nowrap">{{ item_name }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="bg-main-green flex items-center flex-col">
+        <div class="w-[95%] max-w-[984px]">
+            <p class="text-center mt-12">Formation</p>
+            <div class="mt-12 mx-auto w-[95%] bg-white rounded-lg p-4 mb-12 border border-gray-700">
+                <p class="text-center">Licence Informatique</p>
+                <div class="w-full flex justify-center items-center mt-4 mb-4">
+                    <img src="{% static "img/unistra.svg" %}"
+                         alt="logo du cnrs"
+                         width="125"
+                         height="125" />
+                </div>
+                <p class="text-center text-[#393E46]">Strasbourg</p>
+            </div>
+        </div>
+    </div>
+{% endblock main_section %}
